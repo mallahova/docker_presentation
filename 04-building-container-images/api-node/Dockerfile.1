@@ -1,0 +1,8 @@
+# Pin specific version
+FROM node:iron-alpine3.21
+
+COPY . .
+
+RUN npm install
+
+CMD [ "node", "index.js" ]

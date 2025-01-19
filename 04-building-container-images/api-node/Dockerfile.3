@@ -1,0 +1,17 @@
+# Pin specific version for stability
+FROM node:iron-alpine3.21
+
+# Specify working directory other than /
+WORKDIR /usr/src/app
+
+# Copy only files required to install
+# dependencies (better layer caching)
+COPY package*.json ./
+
+RUN npm install
+
+# Copy remaining source code AFTER installing dependencies. 
+# Again, copy only the necessary files
+COPY ./src/ .
+
+CMD [ "node", "index.js" ]

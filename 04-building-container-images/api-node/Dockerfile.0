@@ -1,0 +1,8 @@
+# same as node:latest 1.16 GB!!
+FROM node 
+
+COPY . .
+
+RUN npm install
+
+CMD [ "node", "index.js" ]
