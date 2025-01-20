@@ -37,8 +37,7 @@ export function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <h1>Hey Team! 👋</h1>
-      <CurrentTime api="/api/golang/"/>
-      <CurrentTime api="/api/node/"/>
+      <CurrentTime api="/api/node/" />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

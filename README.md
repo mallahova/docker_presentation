@@ -19,14 +19,10 @@ Before we build our own container images, we can familiarize ourselves with the 
 
 Demonstrates how to write Dockerfiles and build container images for the components of the example web app. Starting with a naive implementation, we then iterate towards a production ready container image.
 
-<!-- ## [06 - Container Registries](07-container-registries/README.md)
+## [05 - Running Containers](05-running-containers/README.md)
 
-Explains what container registries are and how to use them to share and distribute container images.
-
-## [07 - Running Containers](08-running-containers/README.md)
-
-Using the containerized web application from sections 05 and 06, we craft the necessary commands to run our application with Docker and Docker Compose. We also cover the variety of runtime configuration options and when to use them.
-
+Using the containerized web application, we craft the necessary commands to run our application with Docker and Docker Compose. We also cover the variety of runtime configuration options and when to use them.
+<!-- 
 ## [08 - Container Security](09-container-security/README.md)
 
 Highlights best practices for container image and container runtime security.
@@ -41,4 +37,4 @@ Establishes tooling and configuration to enable improved developer experience wh
 
 ## [11 - Deploying Containers](12-deploying-containers/README.md)
 
-Demonstrates deploying container applications to production using three different approaches: railway.app, a single node Docker Swarm, and a Kubernetes cluster. -->
+Demonstrates deploying container applications to production using three different approaches: railway.app, a single node Docker Swarm, and a Kubernetes cluster. --> 

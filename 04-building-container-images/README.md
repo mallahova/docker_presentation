@@ -43,3 +43,13 @@ Here are some of the techniques demonstrated in the Dockerfiles within this repo
 10) **Use multi-stage builds where sensible:** For some situations, multi-stage builds can vastly reduce the size of the final image and improve build times. Learn about and use multi-stage builds where appropriate.
 
 In general, these techniques impact some combination of (1) build speed, (2) image security, and (3) developer clarity.
+
+## Additional Features
+
+There are some additional features of Dockerfiles that are not shown in the example applications but are worth knowing about. These are highlighted in `Dockerfile.sample` and the corresponding build / run commands in the `Makefile`
+
+1) **Parser directives:** Specify the particular Dockefile syntax being used or modify the escape character.
+2) **ARG:** Enables setting variables at build time that do not persist in the final image (but can be seen in the image metadata).
+3) **Heredocs syntax:** Enables multi-line commands within a Dockerfile.
+4) **Mounting secrets:** Allows for providing sensitive credentials required at build time while keeping them out of the final image.
+5) **ENTRYPOINT + CMD:** The interaction between `ENTRYPOINT` and `CMD` can be confusing. Depending on whether arguments are provided at runtime one or more will be used. See the examples by running `make run-sample-entrypoint-cmd`.
