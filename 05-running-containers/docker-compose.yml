@@ -1,0 +1,49 @@
+services:
+  client-react-nginx:
+    labels:
+      shipyard.primary-route: true
+      shipyard.route: '/'
+    image: client-react-nginx
+    build:
+      context: ../04-building-container-images/client-react/
+      dockerfile: ../../04-building-container-images/client-react/Dockerfile.5
+    init: true
+    networks:
+      - frontend
+    ports:
+      - 80:8080
+    restart: unless-stopped
+  api-node:
+    labels:
+      shipyard.route: '/api/node/'
+      shipyard.route.rewrite: true
+    image: api-node
+    build:
+      context: ../04-building-container-images/api-node/
+      dockerfile: ../../04-building-container-images/api-node/Dockerfile.7
+    init: true
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:foobarbaz@db:5432/postgres
+    networks:
+      - frontend
+      - backend
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+  db:
+    image: postgres:15.1-alpine
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=foobarbaz
+    networks:
+      - backend
+    ports:
+      - 5432:5432
+volumes:
+  pgdata:
+networks:
+  frontend:
+  backend:
