@@ -1,5 +1,5 @@
 # same as node:latest 1.16 GB!!
-FROM node 
+FROM node:latest 
 
 COPY . .
 
