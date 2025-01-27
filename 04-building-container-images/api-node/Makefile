@@ -1,4 +1,4 @@
-API_NODE_PATH:=../../05-example-web-application/api-node/
+API_NODE_PATH:=../../04-building-container-images/api-node/
 DOCKERHUB_REPO:=docker
 
 N?=0
@@ -11,7 +11,7 @@ build-N:
 
 .PHONY: build-all
 build-all:
-	for number in 0 1 2 3 4 5 6 7 8; do \
+	for number in 0 1 2 3 4 5 6 7; do \
 			N=$$number $(MAKE) build-N; \
 	done
 
@@ -21,6 +21,6 @@ push-N:
 
 .PHONY: push-all
 push-all:
-	for number in 0 1 2 3 4 5 6 7 8; do \
+	for number in 0 1 2 3 4 5 6 7; do \
 			N=$$number $(MAKE) push-N; \
 	done

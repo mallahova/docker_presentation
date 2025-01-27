@@ -69,14 +69,12 @@ docker-run-all:
 docker-stop:
 	-docker stop db
 	-docker stop api-node
-	-docker stop client-react-vite
 	-docker stop client-react-nginx
 
 .PHONY: docker-rm
 docker-rm:
 	-docker container rm db
 	-docker container rm api-node
-	-docker container rm client-react-vite
 	-docker container rm client-react-nginx
 	-docker network rm my-network
 

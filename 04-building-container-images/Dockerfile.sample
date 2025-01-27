@@ -43,5 +43,7 @@ ENV ENV_VAR=bar
 # Use the convention of your language/framework 
 WORKDIR path/to/the/working/directory
 
-ENTRYPOINT [ "echo", "Hey Team 👋 (entrypoint)" ]
-CMD [ "+ (cmd)" ]
+#what to run
+ENTRYPOINT [ "echo", "Hey Team 👋 (entrypoint)" ] 
+#how to run it
+CMD [ "+ (cmd)" ] 

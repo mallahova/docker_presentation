@@ -1,4 +1,4 @@
-API_NODE_PATH:=../../05-example-web-application/client-react/
+API_NODE_PATH:=../../04-building-container-images/client-react/
 DOCKERHUB_REPO:=docker
 
 N?=0
@@ -11,7 +11,7 @@ build-N:
 
 .PHONY: build-all
 build-all:
-	for number in 0 1 2 3 4 5; do \
+	for number in 0 1 2 3 4 5 6; do \
 			N=$$number $(MAKE) build-N; \
 	done
 
